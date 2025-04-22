@@ -26,3 +26,11 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
+
+def index(request):
+    context = {
+        'title': 'Моя главная страница',
+        'message': 'Добро пожаловать на мой сайт!',
+        # Другие переменные для передачи в шаблон
+    }
+    return render(request, 'myapp/index.html', context)
